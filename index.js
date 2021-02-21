@@ -3,6 +3,7 @@ const config = require('./config.json');
 const client = new Discord.Client();
 
 const responses = require('./responses/responses.js');
+const sendResponse = require('./responses/responseUtils.js');
 
 client.once('ready', () => {
 	console.log('Banana!');
@@ -11,9 +12,9 @@ client.once('ready', () => {
 client.login(config.token);
 
 client.on('message', message => {
-	responses.forEach(item => {
-		if (message.content.match(item.regex)) {
-			item.response(message);
+	responses.forEach(response => {
+		if (message.content.match(response.regex)) {
+			sendResponse(message, response);
 		}
 	});
 });
