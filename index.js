@@ -6,8 +6,6 @@ const responses = require('./responses/responses.js');
 
 client.once('ready', () => {
 	console.log('Banana!');
-	console.log(responses);
-	console.log(responses[0].response('banana'));
 });
 
 client.login(config.token);
