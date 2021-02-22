@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const config = require('./config.json');
 const client = new Discord.Client();
 
-const responses = require('./responses/responses.js');
+const responses = require('./data/responses.js');
 const sendResponse = require('./responses/responseUtils.js');
 
 client.once('ready', () => {
