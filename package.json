@@ -18,7 +18,14 @@
   },
   "homepage": "https://github.com/devon-wolf/minion-bot#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "discord.js": "^12.5.1",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "pg": "^8.5.1",
+    "superagent": "^6.1.0"
   }
 }
