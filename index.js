@@ -12,6 +12,8 @@ client.once('ready', () => {
 client.login(process.env.BOT_TOKEN);
 
 client.on('message', message => {
+	if (message.author.bot) return;
+
 	responses.forEach(response => {
 		if (message.content.match(response.regex)) {
 			sendResponse(message, response);
