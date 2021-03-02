@@ -2,7 +2,7 @@ require('dotenv').config();
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const responses = require('./data/responses.js');
+const responses = require('./data/response-data.js');
 const sendResponse = require('./responses/responseUtils.js');
 
 client.once('ready', () => {

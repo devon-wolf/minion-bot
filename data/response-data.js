@@ -48,12 +48,6 @@ module.exports = [
 		],
 	},
 	{
-		regex: /man/ig,
-		images: [
-			'https://cdn.discordapp.com/attachments/808589409074937863/809966580888502282/e849d09b9b599b08d05b2ca3ac4580bc.png',
-		],
-	},
-	{
 		regex: /long/ig,
 		images: [
 			'https://cdn.discordapp.com/attachments/808589409074937863/809966696756281354/127670f213927573b07101cb3f971494.png',
