@@ -90,12 +90,6 @@ module.exports = [
 		],
 	},
 	{
-		regex: /eat/ig,
-		images: [
-			'https://cdn.discordapp.com/attachments/808589409074937863/809967610283294760/minions-newflavor-menu-hr-rgb.png',
-		],
-	},
-	{
 		regex: /hate/ig,
 		images: [
 			'https://cdn.discordapp.com/attachments/808589409074937863/809967768874385478/1l0apx.png',
