@@ -8,6 +8,4 @@ async function getAllResponses() {
 	return response.body;
 }
 
-module.exports = {
-	getAllResponses,
-};
+module.exports = { getAllResponses };

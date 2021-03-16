@@ -3,12 +3,18 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const { getAllResponses } = require('./utils/server-utils.js');
-const sendResponse = require('./utils/response-utils.js');
+const { sendResponse } = require('./utils/response-utils.js');
+const { makeRegex } = require('./utils/munge-utils.js');
 
 let responses = [];
 
 client.once('ready', async () => {
-	responses = await getAllResponses();
+	const unmappedResponses = await getAllResponses();
+	responses = unmappedResponses.map(response => {
+		response.regex = makeRegex(response.regex);
+		return response;
+	});
+
 	console.log('Banana!');
 });
 
