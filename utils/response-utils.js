@@ -8,6 +8,8 @@ function pickResponse(images) {
 	}
 }
 
-module.exports = function sendResponse(message, object) {
+function sendResponse(message, object) {
 	message.channel.send(pickResponse(object.images));
-};
+}
+
+module.exports = { sendResponse };

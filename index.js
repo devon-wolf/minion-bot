@@ -2,10 +2,19 @@ require('dotenv').config();
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const responses = require('./data/response-data.js');
-const sendResponse = require('./responses/responseUtils.js');
+const { getAllResponses } = require('./utils/server-utils.js');
+const { sendResponse } = require('./utils/response-utils.js');
+const { makeRegex } = require('./utils/munge-utils.js');
 
-client.once('ready', () => {
+let responses = [];
+
+client.once('ready', async () => {
+	const unmappedResponses = await getAllResponses();
+	responses = unmappedResponses.map(response => {
+		response.regex = makeRegex(response.regex);
+		return response;
+	});
+
 	console.log('Banana!');
 });
 
