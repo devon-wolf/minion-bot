@@ -2,10 +2,13 @@ require('dotenv').config();
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const responses = require('./data/response-data.js');
-const sendResponse = require('./responses/responseUtils.js');
+const { getAllResponses } = require('./utils/server-utils.js');
+const sendResponse = require('./utils/response-utils.js');
 
-client.once('ready', () => {
+let responses = [];
+
+client.once('ready', async () => {
+	responses = await getAllResponses();
 	console.log('Banana!');
 });
 
