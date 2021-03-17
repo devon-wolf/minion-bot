@@ -1,3 +1,4 @@
+require('dotenv').config();
 const request = require('superagent');
 
 async function getAllResponses() {
