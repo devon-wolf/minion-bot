@@ -1,9 +1,10 @@
-require('dotenv').config();
 const request = require('superagent');
+
+const URL = 'https://minion-server.herokuapp.com';
 
 async function getAllResponses() {
 	console.log('getting all responses...');
-	const response = await request.get(`${process.env.SERVER_URL}/responses`);
+	const response = await request.get(`${URL}/responses`);
 	console.log('responses gotten!');
 	return response.body;
 }
