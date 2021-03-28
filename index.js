@@ -29,3 +29,13 @@ client.on('message', message => {
 		}
 	});
 });
+
+client.on('message', async message => {
+	if (message.content.startsWith('!update')) {
+		const unmappedResponses = await getAllResponses();
+		responses = unmappedResponses.map(response => {
+			response.regex = makeRegex(response.regex);
+			return response;
+		});
+	}
+});
